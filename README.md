@@ -1,5 +1,7 @@
 # 动画相关
 
+[TOC]
+
 本文源码已上传github: [WhiteNight123/AnimationDemo (github.com)](https://github.com/WhiteNight123/AnimationDemo)
 
 ## 属性动画
@@ -72,7 +74,7 @@
 
 效果图
 
-<img src="https://s2.loli.net/2022/07/11/OWHiDkyCujQlSPA.gif" alt="demo1" style="zoom: 33%;" />
+<img src="https://s2.loli.net/2022/07/11/OWHiDkyCujQlSPA.gif" alt="demo1" style="zoom: 25%;" />
 
 #### `ofInt`()
 
@@ -188,7 +190,7 @@ class MyInterpolator : Interpolator {
 
   效果图:就是反转一下动画
 
-<img src="https://s2.loli.net/2022/07/27/FZYJeW2QntgCyED.gif" alt="MyInterpolator" style="zoom:25%;" />
+<img src="https://s2.loli.net/2022/07/27/FZYJeW2QntgCyED.gif" alt="MyInterpolator" style="zoom: 25%;" />
 
 #### 估值器(TypeEvaluator)
 
@@ -231,7 +233,7 @@ class MyEvaluator : TypeEvaluator<Int> {
 
   效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\MyEvaluator.gif" alt="MyEvaluator" style="zoom:25%;" />
+<img src="D:\OneDrive\桌面\动画可见\gif\MyEvaluator.gif" alt="MyEvaluator" style="zoom: 25%;" />
 
 
 
@@ -336,7 +338,7 @@ class FallingBallEvaluator : TypeEvaluator<Point> {
 
   效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\ofObject.gif" alt="ofObject" style="zoom:25%;" />
+<img src="D:\OneDrive\桌面\动画可见\gif\ofObject.gif" alt="ofObject" style="zoom: 25%;" />
 
 ### ObjectAnimator的简单使用
 
@@ -879,7 +881,7 @@ public void setInterpolator(TimeInterpolator interpolator)
     }
 ```
 
-  就是调用了内部的`start(boolean)`方法
+  进入内部的`start(boolean)`方法
 
 ```java
 // ValueAnimator
@@ -898,6 +900,7 @@ private void start(boolean playBackwards) {
                 mSeekFraction = 1 + mRepeatCount - mSeekFraction;
             }
         }
+    // 开始标志
         mStarted = true;
         mPaused = false;
         mRunning = false;
@@ -920,7 +923,7 @@ private void start(boolean playBackwards) {
     }
 ```
 
-  都是一些变量初始化,有两个方法`addAnimationCallback(0);`,`startAnimation()`可能是入口
+  都是一些变量初始化,有两个方法`addAnimationCallback(0);`,`startAnimation()`
 
 ```java
 // ValueAnimator
@@ -1027,6 +1030,8 @@ private AnimationFrameCallbackProvider getProvider() {
             mChoreographer.postFrameCallback(callback);
         }
 
+
+// Choreographer
 public void postFrameCallback(FrameCallback callback) {
         postFrameCallbackDelayed(callback, 0);
     }
@@ -1071,6 +1076,7 @@ private final Choreographer.FrameCallback mFrameCallback = new Choreographer.Fra
 private void doAnimationFrame(long frameTime) {
         long currentTime = SystemClock.uptimeMillis();
         final int size = mAnimationCallbacks.size();
+    // 循环遍历列表,取出每一个ValueAnimator
         for (int i = 0; i < size; i++) {
             // ValueAnimator实现了AnimationFrameCallback接口,并且在调用Start()方法后通过AnimationHandler将this缓存到这个列表里
             final AnimationFrameCallback callback = mAnimationCallbacks.get(i);
@@ -1081,7 +1087,6 @@ private void doAnimationFrame(long frameTime) {
             if (isCallbackDue(callback, currentTime)) {
                 // 处理动画逻辑
                 callback.doAnimationFrame(frameTime);
-                //
                 if (mCommitCallbacks.contains(callback)) {
                     getProvider().postCommitCallback(new Runnable() {
                         @Override
@@ -1159,7 +1164,7 @@ public final boolean doAnimationFrame(long frameTime) {
         mLastFrameTime = frameTime;
  
         final long currentTime = Math.max(frameTime, mStartTime);
-        // 根据当前时间计算帧的动画进度
+        // 根据当前时间计算帧的动画进度(核心)
         boolean finished = animateBasedOnTime(currentTime);
 
         if (finished) {
@@ -1218,6 +1223,7 @@ private void removeAnimationCallback() {
         getAnimationHandler().removeCallback(this);
     }
 
+// AnimarionHandler
 public void removeCallback(AnimationFrameCallback callback) {
         mCommitCallbacks.remove(callback);
         mDelayedCallbackStartTime.remove(callback);
@@ -1266,7 +1272,7 @@ if (mLastFrameTime < 0) {
 
 - 每个动画 ValueAnimator 在处理自身的动画行为时，首先，如果当前是动画的第一帧，那么会根据是否有"跳过片头"（setCurrentPlayTime()）来记录当前动画第一帧的时间 mStartTime 应该是什么。
 
-  接下来分析`doAnimationFrame()`,根据当前时间计算并实现当前帧的动画工作.
+  接下来分析`animateBasedOnTime()`,根据当前时间计算并实现当前帧的动画工作.
 
 ```java
 // ValueAnimator
@@ -1331,7 +1337,9 @@ void animateValue(float fraction) {
     }
 ```
 
-  看看`calculateValue()`
+  `PropertyValuesHolder`就是一个存放属性和值的容器,而每次动画的过程中都会从这个容器中取值或者设置值  
+
+看看`calculateValue()`
 
 ```java
  // PropertyValuesHolder
@@ -1345,7 +1353,17 @@ void animateValue(float fraction) {
 public interface Keyframes extends Cloneable {
     Object getValue(float fraction);
 }
+
+// PropertyValuesHolder
+public void setFloatValues(float... values) {
+        mValueType = float.class;
+        mKeyframes = KeyframeSet.ofFloat(values);
+    }
 ```
+
+
+
+其实 `ValueAnimator.ofInt()` 内部会根据相应的方法来创建 mKeyframes 对象，也就是说，在实例化属性动画时，这些 mKeyframes 也顺便被实例化了。
 
 <a name="KeyframeSet的ofInt()"></a>
 
@@ -1376,10 +1394,17 @@ public static KeyframeSet ofInt(int... values) {
 
 ```java
 // IntKeyframeSet
+ @Override
+    public Object getValue(float fraction) {
+        return getIntValue(fraction);
+    }
+
+
 @Override
     public int getIntValue(float fraction) {
         // 处理第一帧
         if (fraction <= 0f) {
+            // 获取第一帧和第二帧
             final IntKeyframe prevKeyframe = (IntKeyframe) mKeyframes.get(0);
             final IntKeyframe nextKeyframe = (IntKeyframe) mKeyframes.get(1);
             int prevValue = prevKeyframe.getIntValue();
@@ -1390,8 +1415,8 @@ public static KeyframeSet ofInt(int... values) {
             if (interpolator != null) {
                 fraction = interpolator.getInterpolation(fraction);
             }
-            float intervalFraction = (fraction - prevFraction) / (nextFraction - prevFraction);
             // 将动画进度转换成第一帧和第二帧之间的进度
+            float intervalFraction = (fraction - prevFraction) / (nextFraction - prevFraction);
             return mEvaluator == null ?
                     prevValue + (int)(intervalFraction * (nextValue - prevValue)) :
                     ((Number)mEvaluator.evaluate(intervalFraction, prevValue, nextValue)).
@@ -1399,6 +1424,7 @@ public static KeyframeSet ofInt(int... values) {
         }
         // 处理最后一帧
         else if (fraction >= 1f) {
+            // 取出倒数第一帧跟倒数第二帧的信息
             final IntKeyframe prevKeyframe = (IntKeyframe) mKeyframes.get(mNumKeyframes - 2);
             final IntKeyframe nextKeyframe = (IntKeyframe) mKeyframes.get(mNumKeyframes - 1);
             int prevValue = prevKeyframe.getIntValue();
@@ -1409,6 +1435,7 @@ public static KeyframeSet ofInt(int... values) {
             if (interpolator != null) {
                 fraction = interpolator.getInterpolation(fraction);
             }
+            // 将进度换算到这两针之间的进度
             float intervalFraction = (fraction - prevFraction) / (nextFraction - prevFraction);
             return mEvaluator == null ?
                     prevValue + (int)(intervalFraction * (nextValue - prevValue)) :
@@ -1416,9 +1443,9 @@ public static KeyframeSet ofInt(int... values) {
         }
         // 处理中间帧
         IntKeyframe prevKeyframe = (IntKeyframe) mKeyframes.get(0);
+        // 遍历每一帧,判断当前的动画进度和这一帧的位置
         for (int i = 1; i < mNumKeyframes; ++i) {
             IntKeyframe nextKeyframe = (IntKeyframe) mKeyframes.get(i);
-            // 遍历每一帧,判断当前的动画进度和这一帧的位置,
             if (fraction < nextKeyframe.getFraction()) {
                 final TimeInterpolator interpolator = nextKeyframe.getInterpolator();
                 float intervalFraction = (fraction - prevKeyframe.getFraction()) /
@@ -1441,31 +1468,22 @@ public static KeyframeSet ofInt(int... values) {
     }
 ```
 
-  当关键帧只有两帧时，我们常使用的 `ValueAnimator.ofInt(100)`， 内部其实就是只创建了两个关键帧，一个是起点 0，一个是结束点 100。那么，在这种只有两帧的情况下，将 0-1 的动画进度值转换成我们需要的 0-100 区间内的值，系统的处理很简单，如果没有设置估值器，也就是 mEvaluator，那么就直接是按比例来转换，比如进度为 0.5，那按比例转换就是 (100 - 0) * 0.5 = 50。如果有设置估值器，那就按照估值器定的规则来，估值器其实就是类似于插值器，属性动画里才引入的概念，Animation 动画并没有，因为只有属性动画内部才帮我们做了值转换工作。
+  当关键帧只有两帧时，比如 `ValueAnimator.ofInt(100)`， 内部其实就是只创建了两个关键帧，一个是起点 0，一个是结束点 100。那么，在这种只有两帧的情况下，将 0-1 的动画进度值转换成我们需要的 0-100 区间内的值，系统的处理很简单，如果没有设置估值器，那么就直接是按比例来转换，比如进度为 0.5，那按比例转换就是 (100 - 0) * 0.5 = 50。
 
   在处理第一帧的工作时，只需要将第二帧当成是最后一帧，那么第一帧和第二帧这样也就可以看成是只有两帧的场景了吧。但是参数 fraction 动画进度是以实际第一帧到最后一帧计算出来的，所以需要先对它进行转换，换算出它在第一帧到第二帧之间的进度，接下去的逻辑也就跟处理两帧时的逻辑是一样的了。同理, 在处理最后一帧时，只需要取出倒数第一帧跟倒数第二帧的信息，然后将进度换算到这两针之间的进度。
 
-  处理中间帧比较复杂,系统从第一帧开始，按顺序遍历每一帧，然后去判断当前的动画进度跟这一帧保存的位置信息来找出当前进度是否就是落在某两个关键帧之间。因为每个关键帧保存的信息除了有它对应的值之外，还有一个是它在第一帧到最后一帧之间的哪个位置，这个位置的取值是[KeyframeSet 的 ofInt()](#KeyframeSet的ofInt())在创建这一系列关键帧时传入的。
+  处理中间帧比较复杂,系统从第一帧开始，按顺序遍历每一帧，然后去判断当前的动画进度跟这一帧保存的位置信息来找出当前进度是否就是落在某两个关键帧之间。然后按照两帧的情况处理
 
   小结:
 
 - 当接收到屏幕刷新信号后，AnimationHandler 会去遍历列表，将所有待执行的属性动画都取出来去计算当前帧的动画行为。
-
 - 每个动画在处理当前帧的动画逻辑时，首先会先根据当前时间和动画第一帧时间以及动画的持续时长来初步计算出当前帧时动画所处的进度，然后会将这个进度值等价转换到 0-1 区间之内。
-
 - 接着，插值器会将这个经过初步计算之后的进度值根据设定的规则计算出实际的动画进度值，取值也是在 0-1 区间内。
-
 - 计算出当前帧动画的实际进度之后，会将这个进度值交给关键帧机制，来换算出我们需要的值，比如 ValueAnimator.ofInt(0, 100) 表示我们需要的值变化范围是从 0-100，那么插值器计算出的进度值是 0-1 之间的，接下去就需要借助关键帧机制来映射到 0-100 之间。
-
 - 关键帧的数量是由 ValueAnimator.ofInt(0, 1, 2, 3) 参数的数量来决定的，比如这个就有四个关键帧，第一帧和最后一帧是必须的，所以最少会有两个关键帧，如果参数只有一个，那么第一帧默认为 0，最后一帧就是参数的值。当调用了这个 ofInt() 方法时，关键帧组也就被创建了。
-
 - 当只有两个关键帧时，映射的规则是，如果没有设置估值器，那么就等比例映射，比如动画进度为 0.5，需要的值变化区间是 0-100，那么等比例映射后的值就是 50，那么我们在 onAnimationUpdate 的回调中通过 animation.getAnimatedValue() 获取到的值 50 就是这么来的。
-
-- 如果有设置估值器，那么就按估值器的规则来进行映射。
-
 - 当关键帧超过两个时，需要先找到当前动画进度是落于哪两个关键帧之间，然后将这个进度值先映射到这两个关键帧之间的取值，接着就可以将这两个关键帧看成是第一帧和最后一帧，那么就可以按照只有两个关键帧的情况下的映射规则来进行计算了。
-
-- 而进度值映射到两个关键帧之间的取值，这就需要知道每个关键帧在整个关键帧组中的位置信息，或者说权重。而这个位置信息是在创建每个关键帧时就传进来的。onInt() 的规则是所有关键帧按等比例来分配权重，比如有三个关键帧，第一帧是 0，那么第二帧就是 0.5， 最后一帧 1。
+- 而进度值映射到两个关键帧之间的取值，这就需要知道每个关键帧在整个关键帧组中的位置信息，或者说权重。而这个位置信息是在创建每个关键帧时就传进来的。onInt() 的规则是所有关键帧按等比例来分配权重。
 
 到这里我们就分析完`ValueAnimator`了
 
@@ -1476,6 +1494,8 @@ public static KeyframeSet ofInt(int... values) {
 [ValueAnimation时序图 -查看大图](https://www.processon.com/view/link/62e1d8d6f346fb0760d091d5)
 
 #### ObjectAnimator源码解读
+
+
 
   我们先从`ObjectAnimator.ofInt()`开始
 
@@ -1489,7 +1509,7 @@ public static ObjectAnimator ofInt(Object target, String propertyName, int... va
     }
 ```
 
-  看一下ObjectAnimator的构造函数
+  看一下`ObjectAnimator`的构造函数
 
 ```java
 // ObjectAnimator
@@ -1509,9 +1529,9 @@ private ObjectAnimator(Object target, String propertyName) {
             if (isStarted()) {
                 cancel();
             }
-            // 这是一个软引用
+            // 这是一个软引用,这样ObjectAnimator就不会持有View的引用，不会影响Activity的正常回收，从而不会引起Activity内存泄漏。
             mTarget = target == null ? null : new WeakReference<Object>(target);
-            // 记录尚未初始化,ValueAnimator的初始化标志位
+            // 记录未初始化,ValueAnimator的初始化标志位
             mInitialized = false;
         }
     }
@@ -1558,17 +1578,15 @@ public void setPropertyName(@NonNull String propertyName) {
 
 ```java
 // PropertyValuesHolder
- public static PropertyValuesHolder ofInt(Property<?, Integer> property, int... values) {
-        return new IntPropertyValuesHolder(property, values);
+public static PropertyValuesHolder ofInt(String propertyName, int... values) {
+        return new IntPropertyValuesHolder(propertyName, values);
     }
 
-public IntPropertyValuesHolder(Property property, int... values) {
-            super(property)
-    	   // 调用FloatPropertyValuesHolder.setFloatValues方法
+
+public IntPropertyValuesHolder(String propertyName, int... values) {
+            super(propertyName);
+            // 调用IntPropertyValuesHolder.setIntValues方法
             setIntValues(values);
-            if (property instanceof  IntProperty) {
-                mIntProperty = (IntProperty) mProperty;
-            }
         }
 
 @Override
@@ -1585,9 +1603,13 @@ public void setIntValues(int... values) {
     }
 ```
 
-`ObjectAnimator.ofFloat`的过程就结束了，下面我们来看其他方法
+`ObjectAnimator.ofFloat`的过程就结束了，
 
-  ObjectAnimator 是继承的 ValueAnimator,我们只需要知道ObjectAnimator 的 `start()` 多做了那些是就行.
+小结:
+
+  ofInt()会创建`ObjecctAnimator`对象,并设置动画目标target和属性名propertyName,然后调用`PropertyValuesHolder.ofInt()`进行初始化
+
+下面我们来看ObjectAnimator 的 `start()` 方法
 
 ```java
 // ObjectAnimator
@@ -1617,7 +1639,7 @@ public void setIntValues(int... values) {
 // ObjectAnimator
 @Override
     void initAnimation() {
-        // 第一次执行时，mInitialized为false,初始化后该标志位置为true，
+        // 第一次执行时，mInitialized为false,初始化后该标志位置为true
         if (!mInitialized) {
             final Object target = getTarget();
             if (target != null) {
@@ -1632,11 +1654,10 @@ public void setIntValues(int... values) {
     }
 ```
 
- 分析`PropertyValuesHolder.setupSetterAndGetter()`
+ 分析`PropertyValuesHolder.setupSetterAndGetter()`,主要是初始化反射方法mSetter和mGetter
 
 ```java
 // PropertyValuesHolder
-// 主要是初始化反射方法mSetter和mGetter
  void setupSetterAndGetter(Object target) {
      // 如果我们设置了mPropertyName,mProperty为null
         if (mProperty != null) {
@@ -1778,7 +1799,7 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
                 typeVariants[0] = valueType;
             }
             // FLOAT_VARIANTS,遍历含有float.class、Float.class、double.class、Double.class等参数的方法
-            // 只要是相关的基本类型，都会遍历反射查找set或者get方法，看到这里是不是感觉太神奇了
+            // 只要是相关的基本类型，都会遍历反射查找set或者get方法
             for (Class typeVariant : typeVariants) {
                 args[0] = typeVariant;
                 try {
@@ -1806,7 +1827,7 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
     }
 ```
 
-  到这里ObjectAnimator的init方法已经完成,接下来我们回到`ValueAnimator.setCurrentFraction(float fraction)`方法，最后调用了`ObjectAnimator.animateValue(float fraction)`
+  到这里ObjectAnimator的`initAnimation()`方法已经完成,接下来我们回到`ValueAnimator.setCurrentFraction(float fraction)`方法，最后调用了`ObjectAnimator.animateValue(float fraction)`
 
 ```java
 // ObjectAnimator
@@ -1865,6 +1886,8 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
 ```
 
   到这里我们把`setCurrentPlayTime()`分析完,`ObjectAnimator`也就分析完了,其他的细节和`ValueAnimator`一样.
+
+
 
 
 
@@ -2706,7 +2729,7 @@ class SquareBoxTransformer : ViewPager2.PageTransformer {
 }
 ```
 
-<img src="https://s2.loli.net/2022/07/29/BpNo46EwZGQaCqr.webp" alt="img" style="zoom: 50%;" />
+<img src="https://s2.loli.net/2022/07/29/BpNo46EwZGQaCqr.webp" alt="img" style="zoom: 67%;" />
 
 
 |                | 前一个view的position变化 | 当前view的position变化 | 后一个view的position变化 |
@@ -2767,7 +2790,9 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > val backgroundColor = if (tabPage == TabPage.Home) Purple100 else Green300
 > ```
 >
-> 如果需要为简单值变化添加动画效果，可以使用 `animate*AsState` .这里使用`animateColorAsState`可组合向，即可创建动画值。返回的值是 `State<T>` 对象，可以使用包含 `by` 声明的本地委托属性，以将该值视为普通变量。
+> 如果需要为简单值变化添加动画效果，可以使用 `animate*AsState` .这里使用`animateColorAsState`可组合向，创建动画值。
+>
+> 注意:返回的值是 `State<T>` 对象，可以使用包含 `by` 声明的本地委托属性，将该值视为普通变量。`Compose`中都会把State<T>对象使用by委托属性
 >
 > ```kotlin
 > val backgroundColor by animateColorAsState(if (tabPage == TabPage.Home) Purple100 else Green300)
@@ -2791,7 +2816,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > }
 > ```
 >
-> 为可见性变化添加动画非常简单，只需将 `if` 替换为 `AnimatedVisibility` 可组合项即可。
+> 为可见性变化添加动画，将 `if` 替换为 `AnimatedVisibility` 可组合项。
 >
 > ```kotlin
 > AnimatedVisibility(extended) {
@@ -2817,7 +2842,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > `animationSpec` 是指定动画值应如何随时间变化。这里，用 `tween` 函数创建, 时长为 150 毫秒，加/减速选项为 `LinearOutSlowInEasing`。
 >
-> 同理，可以对 `exit` 参数使用 `slideOutVertically` 函数。`slideOutVertically` 假定初始偏移量为 0，因此只需指定 `targetOffsetY`。使 `tween` 函数，但时长为 250 毫秒，加/减速选项为 `FastOutLinearInEasing`。
+> 同理，可以对 `exit` 参数使用 `slideOutVertically` 函数。`slideOutVertically` 假定初始偏移量为 0，只需指定 `targetOffsetY`。使 `tween` 函数，但时长为 250 毫秒，加/减速选项为 `FastOutLinearInEasing`。
 >
 > 生成的代码应如下所示。
 >
@@ -2970,25 +2995,23 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > val alpha = 1f
 > ```
 >
-> 使用 `InfiniteTransition`实现重复
->
-> 如需创建 `InfiniteTransition`，可以使用 `rememberInfiniteTransition` 函数。然后，可以使用 `InfiniteTransition` 的一个 `animate*` 扩展函数声明每个动画值变化。这里为 Alpha 值添加动画效果，`initialValue` 参数应为 `0f`，而 `targetValue` 应为 `1f`。然后为动画指定 `InfiniteRepeatableSpec`,使其重复。
+>  `InfiniteTransition`可以实现重复动画,先使用 `rememberInfiniteTransition` 函数。然后，可以使用 `InfiniteTransition` 的一个 `animate*` 扩展函数声明每个动画值变化。这里为 Alpha 值添加动画效果，`initialValue` 参数应为 `0f`，而 `targetValue` 应为 `1f`。然后为动画指定 `InfiniteRepeatableSpec`,使其重复。
 >
 > ```kotlin
-> val infiniteTransition = rememberInfiniteTransition()
+>val infiniteTransition = rememberInfiniteTransition()
 > val alpha by infiniteTransition.animateFloat(
->  initialValue = 0f,
->  targetValue = 1f,
+> initialValue = 0f,
+> targetValue = 1f,
 >  animationSpec = infiniteRepeatable(
->      animation = keyframes {
->          durationMillis = 1000
+>    animation = keyframes {
+>        durationMillis = 1000
 >          0.7f at 500
 >      },
 >      repeatMode = RepeatMode.Reverse
->  )
-> )
-> ```
->
+>    )
+>    )
+>  ```
+> 
 > 效果图:
 >
 > <img src="https://s2.loli.net/2022/07/27/aCVpfHsGh9w4QOZ.gif" alt="Compose-InfiniteTransition" style="zoom:33%;" />
@@ -2999,7 +3022,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 创建一个修饰符，以使触摸时元素可滑动。当元素被快速滑动到屏幕边缘时，调用 `onDismissed` 回调，移除该元素。
 >
-> `Animatable` 有一些对手势场景非常有用的功能，所以可以创建一个 `Animatable` 实例，并使用它表示可滑动元素的水平偏移量。
+> `Animatable`可表示滑动元素的水平偏移量。
 >
 > ```kotlin
 > val offsetX = remember { Animatable(0f) } /
@@ -3012,7 +3035,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >          // ...
 > ```
 >
-> 如果动画当前正在运行，应将其拦截。可以通过对 `Animatable` 调用 `stop` 来实现此目的。请注意，如果动画未运行，系统会忽略该调用。
+> 如果动画当前正在运行，应将其拦截。可以通过调用 Animatable的stop() 来实现
 >
 > ```kotlin
 > // Wait for a touch down event.
@@ -3024,7 +3047,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > awaitPointerEventScope {
 > ```
 >
-> 不断接收到拖动事件。必须将触摸事件的位置同步到动画值中。为此，可以对 `Animatable` 使用 `snapTo`。
+> 不断接收到拖动事件。必须将触摸事件的位置同步到动画值中。使用Animatable的snapTo。
 >
 > ```kotlin
 > horizontalDrag(pointerId) { change ->
@@ -3040,7 +3063,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > }
 > ```
 >
-> 需要计算快速滑动操作的最终位置，以便确定是要将元素滑回原始位置，还是滑开元素并调用回调。
+> 计算快速滑动操作的最终位置，确定是要将元素滑回原始位置，还是滑开元素
 >
 > ```kotlin
 > // Dragging finished. Calculate the velocity of the fling.
@@ -3049,7 +3072,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > val targetOffsetX = decay.calculateTargetValue(offsetX.value, velocity)
 > ```
 >
-> 需要为 `Animatable` 设置值的上下界限，使其在到达界限时立即停止。借助 `pointerInput` 修饰符，可以通过 `size` 属性访问元素的大小，因此可以使用它获取界限。
+> 为 `Animatable` 设置值的上下界限，使到达界限时立即停止。使用 `pointerInput` 修饰符，可以通过 `size` 属性访问元素的大小,获取界限。
 >
 > ```kotlin
 > offsetX.updateBounds(
@@ -3058,7 +3081,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > )
 > ```
 >
-> 最终，可以开始播放动画。首先来比较之前计算的快速滑动操作的最终位置以及元素的大小。如果最终位置低于该大小，则表示快速滑动的速度不够。可使用 `animateTo` 将值的动画效果设置回 0f。否则，可以使用 `animateDecay` 来开始播放快速滑动动画。当动画结束（很可能是到达之前设置的界限）时，调用回调。
+> 首先来比较之前计算的快速滑动操作的最终位置以及元素的大小。如果最终位置低于该大小，则表示快速滑动的速度不够。使用 `animateTo` 将值的动画效果设置回 0f。否则，可以使用 `animateDecay` 来开始播放快速滑动动画。
 >
 > ```kotlin
 > launch {
@@ -3154,8 +3177,6 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > - 使用 `updateTransition` 为多个值添加动画效果
 > - 使用 `infiniteTransition` 为多个值无限期地添加动画效果 
 > - 使用 `Animatable` 构建了与触摸手势相结合的自定义动画。
-
-
 
 
 

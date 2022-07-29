@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId "com.example.animation1"
         minSdk 25
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -29,6 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildToolsVersion '33.0.0'
 }
 
 dependencies {
