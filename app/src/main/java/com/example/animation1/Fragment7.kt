@@ -27,7 +27,7 @@ class Fragment7 : Fragment() {
         enterTransition = MaterialFadeThrough().apply {
             duration = 300
         }
-        returnTransition= MaterialFadeThrough().apply {
+        returnTransition = MaterialFadeThrough().apply {
             duration = 300
         }
         arguments?.let {

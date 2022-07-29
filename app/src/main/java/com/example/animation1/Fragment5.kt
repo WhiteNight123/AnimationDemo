@@ -13,6 +13,8 @@ import androidx.transition.Slide
 import androidx.transition.TransitionManager
 import com.example.animation1.utils.themeColor
 import com.google.android.material.card.MaterialCardView
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.google.android.material.transition.MaterialContainerTransform
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,6 +36,8 @@ class Fragment5 : Fragment() {
     lateinit var textView2: TextView
     lateinit var textView3: TextView
     lateinit var textView4: TextView
+    lateinit var chipGroup: ChipGroup
+    lateinit var chip1: Chip
 
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -61,6 +65,9 @@ class Fragment5 : Fragment() {
         textView2 = view.findViewById(R.id.wangzhe)
         textView3 = view.findViewById(R.id.tv_yuanshen2)
         textView4 = view.findViewById(R.id.huangyeluandou)
+        chipGroup = view.findViewById(R.id.chip_group)
+        chip1 = view.findViewById(R.id.chip1)
+
         materialCardView1.setOnClickListener {
             expandChip(it)
         }
@@ -84,6 +91,12 @@ class Fragment5 : Fragment() {
         returnTransition = Slide().apply {
             duration = 300
             addTarget(R.id.materialCardView1)
+        }
+        chip1.setOnClickListener {
+            val chip = Chip(activity)
+            chip.text = "这是个新的chip"
+            // 动态插入chip
+            chipGroup.addView(chip)
         }
     }
 

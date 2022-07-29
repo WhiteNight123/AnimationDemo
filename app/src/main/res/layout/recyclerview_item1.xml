@@ -4,12 +4,11 @@
     android:layout_height="wrap_content">
 
 
-        <TextView
-            android:layout_margin="4dp"
-            android:id="@+id/rv_tv"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+    <TextView
+        android:id="@+id/rv_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:textSize="18sp" />
 
 </LinearLayout>

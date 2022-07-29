@@ -1,7 +1,6 @@
 package com.example.animation1
 
 
-import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
@@ -15,7 +14,6 @@ import android.transition.Transition
 import android.transition.TransitionManager
 import android.view.Gravity
 import android.view.View
-import android.view.animation.*
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView

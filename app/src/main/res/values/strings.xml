@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Animation1</string>
+    <string name="app_name">AnimationDemo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

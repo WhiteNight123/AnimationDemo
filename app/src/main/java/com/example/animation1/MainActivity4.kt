@@ -18,7 +18,8 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity4 : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var statusBar: View
-//    lateinit var navigationBar: View
+
+    //    lateinit var navigationBar: View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main4)
@@ -55,7 +56,7 @@ class MainActivity4 : AppCompatActivity() {
         intent.putExtra("param2", view.transitionName)
         val pair1 = Pair.create(view, view.transitionName)
         val pair2 = Pair.create(statusBar, Window.STATUS_BAR_BACKGROUND_TRANSITION_NAME)
-      //  val pair3 = Pair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME)
+        //  val pair3 = Pair.create(navigationBar, Window.NAVIGATION_BAR_BACKGROUND_TRANSITION_NAME)
         val compat =
             ActivityOptionsCompat.makeSceneTransitionAnimation(this, pair1, pair2)
         ActivityCompat.startActivity(this, intent, compat.toBundle())
