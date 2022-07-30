@@ -24,7 +24,7 @@
 
 **属性动画工作原理[重点]**
 
-![安卓属性动画工作原理](https://s2.loli.net/2022/07/29/mRjNFA2nMCEJYbz.png)
+![安卓属性动画工作原理](https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/mRjNFA2nMCEJYbz.png)
 
 [安卓属性动画工作原理 -查看大图](https://www.processon.com/view/link/62cbbd0763768906c5087f89)
 
@@ -74,7 +74,7 @@
 
 效果图
 
-<img src="https://s2.loli.net/2022/07/11/OWHiDkyCujQlSPA.gif" alt="demo1" style="zoom: 25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/OWHiDkyCujQlSPA.gif" alt="demo1" style="zoom: 25%;" />
 
 #### `ofInt`()
 
@@ -122,16 +122,16 @@ public static ValueAnimator ofInt(@NonNull int... values) {
 
 | AccelerateDecelerateInterpolator                             | AccelerateInterpolator                                       | AnticipateInterpolator                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://s2.loli.net/2022/07/27/2zw9v3yabpIiCG6.gif" alt="AccelerateDecelerateInterpolator" style="zoom:25%;" /> | <img src="https://s2.loli.net/2022/07/27/Bzu8V7Dsey3oKrZ.gif" alt="AccelerateInterpolator" style="zoom:25%;" /> | <img src="https://s2.loli.net/2022/07/27/UHwNOTLXpsChAb8.gif" alt="AnticipateInterpolator" style="zoom:25%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/2zw9v3yabpIiCG6.gif" alt="AccelerateDecelerateInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Bzu8V7Dsey3oKrZ.gif" alt="AccelerateInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/UHwNOTLXpsChAb8.gif" alt="AnticipateInterpolator" style="zoom:25%;" /> |
 
 
 | AnticipateOvershootInterpolator                              | BounceInterpolator                                           | CycleInterpolator                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://s2.loli.net/2022/07/27/yBCnQiZLUIRxmwA.gif" alt="AnticipateOvershootInterpolator" style="zoom:25%;" /> | <img src="https://s2.loli.net/2022/07/27/iCHNk6EpMmIARJu.gif" alt="BounceInterpolator" style="zoom:25%;" /> | <img src="https://s2.loli.net/2022/07/27/bDlG15fxipUZw8d.gif" alt="CycleInterpolator" style="zoom:25%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/yBCnQiZLUIRxmwA.gif" alt="AnticipateOvershootInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/iCHNk6EpMmIARJu.gif" alt="BounceInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/bDlG15fxipUZw8d.gif" alt="CycleInterpolator" style="zoom:25%;" /> |
 
 | DecelerateInterpolator                                       | OvershootInterpolator                                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://s2.loli.net/2022/07/27/MEUAOG9qiWmwY4z.gif" alt="DecelerateInterpolator" style="zoom: 25%;" /> | <img src="https://s2.loli.net/2022/07/27/Tt9d5vwrnPjYlBu.gif" alt="OvershootInterpolator" style="zoom:25%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MEUAOG9qiWmwY4z.gif" alt="DecelerateInterpolator" style="zoom: 25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Tt9d5vwrnPjYlBu.gif" alt="OvershootInterpolator" style="zoom:25%;" /> |
 
  先来看一下系统自带的插值器是如何实现的,如LinearInterpolator
 
@@ -190,7 +190,7 @@ class MyInterpolator : Interpolator {
 
   效果图:就是反转一下动画
 
-<img src="https://s2.loli.net/2022/07/27/FZYJeW2QntgCyED.gif" alt="MyInterpolator" style="zoom: 25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/FZYJeW2QntgCyED.gif" alt="MyInterpolator" style="zoom: 25%;" />
 
 #### 估值器(TypeEvaluator)
 
@@ -233,7 +233,7 @@ class MyEvaluator : TypeEvaluator<Int> {
 
   效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\MyEvaluator.gif" alt="MyEvaluator" style="zoom: 25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MyEvaluator.gif" alt="MyEvaluator" style="zoom: 25%;" />
 
 
 
@@ -338,7 +338,7 @@ class FallingBallEvaluator : TypeEvaluator<Point> {
 
   效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\ofObject.gif" alt="ofObject" style="zoom: 25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ofObject.gif" alt="ofObject" style="zoom: 25%;" />
 
 ### ObjectAnimator的简单使用
 
@@ -386,7 +386,7 @@ class FallingBallEvaluator : TypeEvaluator<Point> {
         }
         button4.setOnClickListener {
             //透明度从1到0再到1
-            val animator = ObjectAnimator.ofFloat(textView, "alpha", 1f, 2f, 1f)
+            val animator = ObjectAnimator.ofFloat(textView, "alpha", 1f, 0f, 1f)
             animator.duration = 1000
             animator.start()
         }
@@ -396,11 +396,11 @@ class FallingBallEvaluator : TypeEvaluator<Point> {
 
 | 旋转                                                         | 平移                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://s2.loli.net/2022/07/27/gF1P5G4cJeTI87p.gif" alt="ObjectAnimator-旋转" style="zoom:33%;" /> | <img src="https://s2.loli.net/2022/07/27/dh1uGvkzgPVJi4p.gif" alt="ObjectAnimator-平移" style="zoom:33%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/gF1P5G4cJeTI87p.gif" alt="ObjectAnimator-旋转" style="zoom:33%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/dh1uGvkzgPVJi4p.gif" alt="ObjectAnimator-平移" style="zoom:33%;" /> |
 
 | 透明                                                         | 缩放                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://s2.loli.net/2022/07/27/cr1awb7nK4MvixX.gif" alt="ObjectAnimator-透明" style="zoom: 33%;" /> | <img src="https://s2.loli.net/2022/07/27/RbSHJwYFsu3Lk46.gif" alt="ObjectAnimator-缩放" style="zoom:33%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/cr1awb7nK4MvixX.gif" alt="ObjectAnimator-透明" style="zoom: 33%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/RbSHJwYFsu3Lk46.gif" alt="ObjectAnimator-缩放" style="zoom:33%;" /> |
 
 常用的属性值
 
@@ -450,7 +450,7 @@ val animator = ObjectAnimator.ofObject(
 
   效果图:
 
-<img src="https://s2.loli.net/2022/07/27/1OZoxCjlnV8YIUb.gif" alt="自定义ObjectAnimator属性" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/1OZoxCjlnV8YIUb.gif" alt="自定义ObjectAnimator属性" style="zoom:25%;" />
 
 
 
@@ -462,13 +462,14 @@ val animator = ObjectAnimator.ofObject(
 
 - 初始化时，如果属性的初始值没有提供，则调用属性的 `get（）`进行取值,如果没有`get()`会崩溃掉
 
--  当**值**变化时，用对象该属性的 `set（）`方法，从而从而将新的属性值设置给对象属性。
+- 当**值**变化时，用对象该属性的 `set（）`方法，从而从而将新的属性值设置给对象属性。
 
   对于属性动画，其拓展性在于：自定义对象的属性，并通过操作自定义的属性从而实现动画。
 
   自定义属性的步骤：
 
 - 为对象设置需要操作属性的set（） & get（）方法
+
 - 通过实现TypeEvaluator类从而定义属性变化的逻辑 
 
   设置对象类属性的`set（）` & `get（）`有两种方法：
@@ -498,7 +499,7 @@ animator.start()
 
   效果图:
 
-<img src="https://s2.loli.net/2022/07/27/IEWRNeXbdMpHjYx.gif" alt="ObjectAnimator-改变set&get" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/IEWRNeXbdMpHjYx.gif" alt="ObjectAnimator-改变set&get" style="zoom:25%;" />
 
 
 
@@ -624,7 +625,7 @@ val tvAnimator1 = ObjectAnimator.ofInt(
 
 | PlayTogether                                                 | PlaySequentially                                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://s2.loli.net/2022/07/27/iGaWb2kcLHNBS6t.gif" alt="PlayTogether" style="zoom: 33%;" /> | <img src="https://s2.loli.net/2022/07/27/jRHqCGsl7rmWnpN.gif" alt="PlaySwquentially" style="zoom: 33%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/iGaWb2kcLHNBS6t.gif" alt="PlayTogether" style="zoom: 33%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/jRHqCGsl7rmWnpN.gif" alt="PlaySwquentially" style="zoom: 33%;" /> |
 
 
 
@@ -710,7 +711,7 @@ textView.animate().alpha(0f).x(50f).y(100f)
 - 流畅(Fluent):ViewPropertyAnimator拥有一个流畅的接口(Fluent Interface),他允许将许多个函数调用自然地串在一起,并把一个多属性的动画写成一行代码
 
   这是一些ViewPropertyAnimator常用的函数
-  
+
 
   | 函数                        | 含义                                  |
   | :-------------------------- | :------------------------------------ |
@@ -1489,7 +1490,7 @@ public static KeyframeSet ofInt(int... values) {
 
 我们再来看一下ValueAnimator的时序图
 
-![ValueAnimator原理时序图](https://s2.loli.net/2022/07/29/A6eql3FxIhgyS8H.png)
+![ValueAnimator原理时序图](https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/A6eql3FxIhgyS8H.png)
 
 [ValueAnimation时序图 -查看大图](https://www.processon.com/view/link/62e1d8d6f346fb0760d091d5)
 
@@ -1902,7 +1903,7 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
 | Explode                                                      | Slide                                                        | Fade                                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 从中心移入或移出                                             | 从边缘移入或移出                                             | 调整透明度产生渐变                                           |
-| <img src="D:\OneDrive\桌面\动画可见\gif\Transition-Explode.gif" alt="Transition-Explode" style="zoom:25%;" /> | <img src="D:\OneDrive\桌面\动画可见\gif\Transition-Slide.gif" alt="Transition-Slide" style="zoom:25%;" /> | <img src="D:\OneDrive\桌面\动画可见\gif\Transition-Fade.gif" alt="Transition-Fade" style="zoom:25%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Transition-Explode.gif" alt="Transition-Explode" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Transition-Slide.gif" alt="Transition-Slide" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Transition-Fade.gif" alt="Transition-Fade" style="zoom:25%;" /> |
 
 
 
@@ -2003,7 +2004,7 @@ val intent = Intent(this, MainActivity2::class.java)
 
 效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\Activity-共享元素.gif" alt="Activity-共享元素" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Activity-%E5%85%B1%E4%BA%AB%E5%85%83%E7%B4%A0.gif" alt="Activity-共享元素" style="zoom:25%;" />
 
   fragment与fragment之间地动画
 
@@ -2025,13 +2026,13 @@ sharedElementEnterTransition = TransitionInflater.from(getContext())
 
 效果图:
 
-<img src="https://s2.loli.net/2022/07/27/wE2KrFdqeT8z4BO.gif" alt="fragment-共享元素" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/wE2KrFdqeT8z4BO.gif" alt="fragment-共享元素" style="zoom:25%;" />
 
   注意:有时从`RecyclerView`界面进入到详情页，由于详情页加载延迟，可能出现没有效果。例如`ImageView`从网络加载图片，可能A界面到B界面没效果，B回到A界面有效果。
 
 例如:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\Shared_Transition_no_Postpone.gif" alt="Shared_Transition_no_Postpone" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Shared_Transition_no_Postpone.gif" alt="Shared_Transition_no_Postpone" style="zoom:25%;" />
 
   解决步骤：
 
@@ -2041,7 +2042,7 @@ sharedElementEnterTransition = TransitionInflater.from(getContext())
 
 效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\Shared_transition_no_exit_retreen.gif" alt="Shared_transition_no_exit_retreen" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Shared_transition_no_exit_retreen.gif" alt="Shared_transition_no_exit_retreen" style="zoom:25%;" />
 
 当Activity A 调用 Activity B ，发生的事件流如下：
 
@@ -2172,7 +2173,7 @@ TransitionManager.go(scene, ChangeBounds())
 
 效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\TransitionManager-动画.gif" alt="TransitionManager-动画" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/TransitionManager-%E5%8A%A8%E7%94%BB.gif" alt="TransitionManager-动画" style="zoom:25%;" />
 
 **过渡动画**
 
@@ -2247,7 +2248,7 @@ public class TransitionValues {
 
 先看效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\自定义Transition.gif" alt="自定义Transition" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/%E8%87%AA%E5%AE%9A%E4%B9%89Transition.gif" alt="自定义Transition" style="zoom:25%;" />
 
 ```java
 public class MyTransition extends Transition {
@@ -2521,7 +2522,7 @@ android:transitionGroup="true"
 
 效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\Shared_transition_final.gif" alt="Shared_transition_final" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Shared_transition_final.gif" alt="Shared_transition_final" style="zoom: 33%;" />
 
 #### MaterialElevationScale
 
@@ -2560,7 +2561,7 @@ requireActivity().supportFragmentManager.beginTransaction()
     .replace(R.id.constraintLayout4, fragment5).addToBackStack(null).commit()
 ```
 
-<img src="D:\OneDrive\桌面\动画可见\gif\MaterialElevationScale.gif" alt="MaterialElevationScale" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialElevationScale.gif" alt="MaterialElevationScale" style="zoom: 33%;" />
 
 #### MaterialSharedAxis
 
@@ -2595,7 +2596,7 @@ returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false).apply {
 
 | MaterialSharedAxis.X                                         | MaterialSharedAxis.Y                                         | MaterialSharedAxis.Z                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="D:\OneDrive\桌面\动画可见\gif\MaterialSharedAxis-X.gif" alt="MaterialSharedAxis-X" style="zoom:25%;" /> | <img src="D:\OneDrive\桌面\动画可见\gif\MaterialSharedAxis-Y.gif" alt="MaterialSharedAxis-Y" style="zoom:25%;" /> | <img src="D:\OneDrive\桌面\动画可见\gif\MaterialSharedAxis-Z.gif" alt="MaterialSharedAxis-Z" style="zoom:25%;" /> |
+| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-X.gif" alt="MaterialSharedAxis-X" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-Y.gif" alt="MaterialSharedAxis-Y" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-Z.gif" alt="MaterialSharedAxis-Z" style="zoom:25%;" /> |
 
 
 
@@ -2620,7 +2621,7 @@ enterTransition = MaterialFadeThrough().apply {
 }
 ```
 
-<img src="D:\OneDrive\桌面\动画可见\gif\MaterialFadeThrough.gif" alt="MaterialFadeThrough" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialFadeThrough.gif" alt="MaterialFadeThrough" style="zoom:25%;" />
 
 #### View的MaterialContainerTransform
 
@@ -2645,7 +2646,7 @@ val transform = MaterialContainerTransform().apply {
         TransitionManager.beginDelayedTransition(constraintLayout, transform)
 ```
 
-<img src="D:\OneDrive\桌面\动画可见\gif\View-MaterialContainerTransform.gif" alt="View-MaterialContainerTransform" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/View-MaterialContainerTransform.gif" alt="View-MaterialContainerTransform" style="zoom: 33%;" />
 
 
 
@@ -2682,7 +2683,7 @@ recyclerView.layoutAnimation = // 入场动画
 
 效果图:
 
-<img src="https://s2.loli.net/2022/07/29/ehwoWQDFGOZb8kz.gif" alt="RecyclerView-入场动画" style="zoom:25%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ehwoWQDFGOZb8kz.gif" alt="RecyclerView-入场动画" style="zoom: 33%;" />
 
 #### ViewPager2的切换动画
 
@@ -2747,7 +2748,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 
 效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\ViewPager2-切换动画.gif" alt="ViewPager2-切换动画" style="zoom:33%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ViewPager2-%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB.gif" alt="ViewPager2-切换动画" style="zoom:33%;" />
 
 #### 自动为布局更新添加动画
 
@@ -2774,7 +2775,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 
 效果图:
 
-<img src="D:\OneDrive\桌面\动画可见\gif\布局更新动画.gif" alt="布局更新动画" style="zoom: 33%;" />
+<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/%E5%B8%83%E5%B1%80%E6%9B%B4%E6%96%B0%E5%8A%A8%E7%94%BB.gif" alt="布局更新动画" style="zoom: 33%;" />
 
 
 
@@ -2800,7 +2801,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:颜色变化
 >
-> <img src="https://s2.loli.net/2022/07/27/XqHFONVlIwhcURk.gif" alt="Compose-animateColorAsState" width="250dp" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/XqHFONVlIwhcURk.gif" alt="Compose-animateColorAsState" width="250dp" />
 
 ### 为可见性添加动画效果
 
@@ -2808,11 +2809,11 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > if (extended) {
->  Text(
->      text = stringResource(R.string.edit),
->      modifier = Modifier
->          .padding(start = 8.dp, top = 3.dp)
->  )
+> Text(
+>   text = stringResource(R.string.edit),
+>   modifier = Modifier
+>       .padding(start = 8.dp, top = 3.dp)
+> )
 > }
 > ```
 >
@@ -2820,17 +2821,17 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > AnimatedVisibility(extended) {
->  Text(
->      text = stringResource(R.string.edit),
->      modifier = Modifier
->          .padding(start = 8.dp, top = 3.dp)
->  )
+> Text(
+>   text = stringResource(R.string.edit),
+>   modifier = Modifier
+>       .padding(start = 8.dp, top = 3.dp)
+> )
 > }
 > ```
 >
 > 效果图:FAB的展开
 >
-> <img src="https://s2.loli.net/2022/07/27/WzescPJXxM7lGrI.gif" alt="Compose-AnimatedVisibility" style="zoom:33%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/WzescPJXxM7lGrI.gif" alt="Compose-AnimatedVisibility" style="zoom:33%;" />
 >
 > 默认情况下，`AnimatedVisibility` 会以淡入和展开的方式显示元素，以淡出和缩小的方式隐藏元素。
 
@@ -2848,28 +2849,28 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```Kotlin
 > AnimatedVisibility(
->  visible = shown,
->  enter = slideInVertically(
->      // Enters by sliding down from offset -fullHeight to 0.
->      initialOffsetY = { fullHeight -> -fullHeight },
->      animationSpec = tween(durationMillis = 150, easing = LinearOutSlowInEasing)
->  ),
->  exit = slideOutVertically(
->      // Exits by sliding up from offset 0 to -fullHeight.
->      targetOffsetY = { fullHeight -> -fullHeight },
->      animationSpec = tween(durationMillis = 250, easing = FastOutLinearInEasing)
->  )
+> visible = shown,
+> enter = slideInVertically(
+>   // Enters by sliding down from offset -fullHeight to 0.
+>   initialOffsetY = { fullHeight -> -fullHeight },
+>   animationSpec = tween(durationMillis = 150, easing = LinearOutSlowInEasing)
+> ),
+> exit = slideOutVertically(
+>   // Exits by sliding up from offset 0 to -fullHeight.
+>   targetOffsetY = { fullHeight -> -fullHeight },
+>   animationSpec = tween(durationMillis = 250, easing = FastOutLinearInEasing)
+> )
 > ) {
->  Surface(
->      modifier = Modifier.fillMaxWidth(),
->      color = MaterialTheme.colors.secondary,
->      elevation = 4.dp
->  ) {
->      Text(
->          text = stringResource(R.string.edit_message),
->          modifier = Modifier.padding(16.dp)
->      )
->  }
+> Surface(
+>   modifier = Modifier.fillMaxWidth(),
+>   color = MaterialTheme.colors.secondary,
+>   elevation = 4.dp
+> ) {
+>   Text(
+>       text = stringResource(R.string.edit_message),
+>       modifier = Modifier.padding(16.dp)
+>   )
+> }
 > }
 > ```
 >
@@ -2877,7 +2878,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 
 >
-> <img src="https://s2.loli.net/2022/07/27/uoXHKFhv7nsBc9V.gif" alt="Compose-AnimatedVisibility-Custom" style="zoom:33%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/uoXHKFhv7nsBc9V.gif" alt="Compose-AnimatedVisibility-Custom" style="zoom:33%;" />
 
 ### 为内容大小添加动画效果
 
@@ -2885,11 +2886,11 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > Column(
->  modifier = Modifier
->      .fillMaxWidth()
->      .padding(16.dp)
+> modifier = Modifier
+>   .fillMaxWidth()
+>   .padding(16.dp)
 > ) {
->  // ... the title and the body
+> // ... the title and the body
 > }
 > ```
 >
@@ -2897,18 +2898,18 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > Column(
->  modifier = Modifier
->      .fillMaxWidth()
->      .padding(16.dp)
->      .animateContentSize()
+> modifier = Modifier
+>   .fillMaxWidth()
+>   .padding(16.dp)
+>   .animateContentSize()
 > ) {
->  // ... the title and the body
+> // ... the title and the body
 > }
 > ```
 >
 > 效果图:
 >
-> <img src="https://s2.loli.net/2022/07/27/mvVMbNucZqQY1Wd.gif" alt="Compose-animateContentSize" style="zoom:33%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/mvVMbNucZqQY1Wd.gif" alt="Compose-animateContentSize" style="zoom:33%;" />
 
 ### 多值动画
 
@@ -2921,69 +2922,69 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > ```kotlin
 > val transition = updateTransition(tabPage)
 > val indicatorLeft by transition.animateDp { page ->
->  tabPositions[page.ordinal].left
+> tabPositions[page.ordinal].left
 > }
 > val indicatorRight by transition.animateDp { page ->
->  tabPositions[page.ordinal].right
+> tabPositions[page.ordinal].right
 > }
 > val color by transition.animateColor { page ->
->  if (page == TabPage.Home) Purple700 else Green800
+> if (page == TabPage.Home) Purple700 else Green800
 > }
 > ```
 >
 > 效果图: 点击标签页会更改 `tabPage` 状态的值，这时与 `transition` 关联的所有动画值会开始以动画方式切换至为目标状态指定的值。
 >
-> <img src="https://s2.loli.net/2022/07/27/xt2P8iQW5mXjfwv.gif" alt="Compose-Transition-多值动画1" style="zoom:33%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/xt2P8iQW5mXjfwv.gif" alt="Compose-Transition-多值动画1" style="zoom:33%;" />
 >
 > 此外，可以指定 `transitionSpec` 参数来自定义动画行为。例如可以让靠近目标页面的一边比另一边移动得更快来实现指示器的弹性效果。可以在 `transitionSpec`中使用 `isTransitioningTo` infix 函数来确定状态变化的方向。
 >
 > ```kotlin
 > val transition = updateTransition(
->  tabPage,
->  label = "Tab indicator"
+> tabPage,
+> label = "Tab indicator"
 > )
 > val indicatorLeft by transition.animateDp(
->  transitionSpec = {
->      if (TabPage.Home isTransitioningTo TabPage.Work) {
->          // Indicator moves to the right.
->          // The left edge moves slower than the right edge.
->          spring(stiffness = Spring.StiffnessVeryLow)
->      } else {
->          // Indicator moves to the left.
->          // The left edge moves faster than the right edge.
->          spring(stiffness = Spring.StiffnessMedium)
->      }
->  },
->  label = "Indicator left"
+> transitionSpec = {
+>   if (TabPage.Home isTransitioningTo TabPage.Work) {
+>       // Indicator moves to the right.
+>       // The left edge moves slower than the right edge.
+>       spring(stiffness = Spring.StiffnessVeryLow)
+>   } else {
+>       // Indicator moves to the left.
+>       // The left edge moves faster than the right edge.
+>       spring(stiffness = Spring.StiffnessMedium)
+>   }
+> },
+> label = "Indicator left"
 > ) { page ->
->  tabPositions[page.ordinal].left
+> tabPositions[page.ordinal].left
 > }
 > val indicatorRight by transition.animateDp(
->  transitionSpec = {
->      if (TabPage.Home isTransitioningTo TabPage.Work) {
->          // Indicator moves to the right
->          // The right edge moves faster than the left edge.
->          spring(stiffness = Spring.StiffnessMedium)
->      } else {
->          // Indicator moves to the left.
->          // The right edge moves slower than the left edge.
->          spring(stiffness = Spring.StiffnessVeryLow)
->      }
->  },
->  label = "Indicator right"
+> transitionSpec = {
+>   if (TabPage.Home isTransitioningTo TabPage.Work) {
+>       // Indicator moves to the right
+>       // The right edge moves faster than the left edge.
+>       spring(stiffness = Spring.StiffnessMedium)
+>   } else {
+>       // Indicator moves to the left.
+>       // The right edge moves slower than the left edge.
+>       spring(stiffness = Spring.StiffnessVeryLow)
+>   }
+> },
+> label = "Indicator right"
 > ) { page ->
->  tabPositions[page.ordinal].right
+> tabPositions[page.ordinal].right
 > }
 > val color by transition.animateColor(
->  label = "Border color"
+> label = "Border color"
 > ) { page ->
->  if (page == TabPage.Home) Purple700 else Green800
+> if (page == TabPage.Home) Purple700 else Green800
 > }
 > ```
 >
 > 效果图:
 >
-> <img src="https://s2.loli.net/2022/07/27/TGzJo72are9R63b.gif" alt="Compose-Transition-多值动画2" style="zoom:33%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/TGzJo72are9R63b.gif" alt="Compose-Transition-多值动画2" style="zoom:33%;" />
 >
 > Android Studio 支持在 Compose 预览中检查过渡效果。如需使用**动画预览**，请在预览中点击可组合项右上角的“Start interactive mode”图标，以开始交互模式。
 >
@@ -2995,26 +2996,26 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > val alpha = 1f
 > ```
 >
->  `InfiniteTransition`可以实现重复动画,先使用 `rememberInfiniteTransition` 函数。然后，可以使用 `InfiniteTransition` 的一个 `animate*` 扩展函数声明每个动画值变化。这里为 Alpha 值添加动画效果，`initialValue` 参数应为 `0f`，而 `targetValue` 应为 `1f`。然后为动画指定 `InfiniteRepeatableSpec`,使其重复。
+> `InfiniteTransition`可以实现重复动画,先使用 `rememberInfiniteTransition` 函数。然后，可以使用 `InfiniteTransition` 的一个 `animate*` 扩展函数声明每个动画值变化。这里为 Alpha 值添加动画效果，`initialValue` 参数应为 `0f`，而 `targetValue` 应为 `1f`。然后为动画指定 `InfiniteRepeatableSpec`,使其重复。
 >
 > ```kotlin
->val infiniteTransition = rememberInfiniteTransition()
+> val infiniteTransition = rememberInfiniteTransition()
 > val alpha by infiniteTransition.animateFloat(
 > initialValue = 0f,
 > targetValue = 1f,
->  animationSpec = infiniteRepeatable(
->    animation = keyframes {
->        durationMillis = 1000
->          0.7f at 500
->      },
->      repeatMode = RepeatMode.Reverse
->    )
->    )
->  ```
-> 
+> animationSpec = infiniteRepeatable(
+> animation = keyframes {
+>     durationMillis = 1000
+>       0.7f at 500
+>   },
+>   repeatMode = RepeatMode.Reverse
+> )
+> )
+> ```
+>
 > 效果图:
 >
-> <img src="https://s2.loli.net/2022/07/27/aCVpfHsGh9w4QOZ.gif" alt="Compose-InfiniteTransition" style="zoom:33%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/aCVpfHsGh9w4QOZ.gif" alt="Compose-InfiniteTransition" style="zoom:33%;" />
 
 ### 手势动画
 
@@ -3027,12 +3028,12 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 > ```kotlin
 > val offsetX = remember { Animatable(0f) } /
 > pointerInput {
->  // Used to calculate a settling position of a fling animation.
->  val decay = splineBasedDecay<Float>(this)
->  // Wrap in a coroutine scope to use suspend functions for touch events and animation.
->  coroutineScope {
->      while (true) {
->          // ...
+> // Used to calculate a settling position of a fling animation.
+> val decay = splineBasedDecay<Float>(this)
+> // Wrap in a coroutine scope to use suspend functions for touch events and animation.
+> coroutineScope {
+>   while (true) {
+>       // ...
 > ```
 >
 > 如果动画当前正在运行，应将其拦截。可以通过调用 Animatable的stop() 来实现
@@ -3051,15 +3052,15 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > horizontalDrag(pointerId) { change ->
->  // Add these 4 lines
->  val horizontalDragOffset = offsetX.value + change.positionChange().x
->  launch {
->      offsetX.snapTo(horizontalDragOffset)
->  }
->  // Record the velocity of the drag.
->  velocityTracker.addPosition(change.uptimeMillis, change.position)
->  // Consume the gesture event, not passed to external
->  change.consumePositionChange()
+> // Add these 4 lines
+> val horizontalDragOffset = offsetX.value + change.positionChange().x
+> launch {
+>   offsetX.snapTo(horizontalDragOffset)
+> }
+> // Record the velocity of the drag.
+> velocityTracker.addPosition(change.uptimeMillis, change.position)
+> // Consume the gesture event, not passed to external
+> change.consumePositionChange()
 > }
 > ```
 >
@@ -3076,8 +3077,8 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > offsetX.updateBounds(
->  lowerBound = -size.width.toFloat(),
->  upperBound = size.width.toFloat()
+> lowerBound = -size.width.toFloat(),
+> upperBound = size.width.toFloat()
 > )
 > ```
 >
@@ -3085,15 +3086,15 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > launch {
->  if (targetOffsetX.absoluteValue <= size.width) {
->      // Not enough velocity; Slide back.
->      offsetX.animateTo(targetValue = 0f, initialVelocity = velocity)
->  } else {
->      // Enough velocity to slide away the element to the edge.
->      offsetX.animateDecay(velocity, decay)
->      // The element was swiped away.
->      onDismissed()
->  }
+> if (targetOffsetX.absoluteValue <= size.width) {
+>   // Not enough velocity; Slide back.
+>   offsetX.animateTo(targetValue = 0f, initialVelocity = velocity)
+> } else {
+>   // Enough velocity to slide away the element to the edge.
+>   offsetX.animateDecay(velocity, decay)
+>   // The element was swiped away.
+>   onDismissed()
+> }
 > }
 > ```
 >
@@ -3107,68 +3108,68 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > ```kotlin
 > private fun Modifier.swipeToDismiss(
->  onDismissed: () -> Unit
+> onDismissed: () -> Unit
 > ): Modifier = composed {
->  // This `Animatable` stores the horizontal offset for the element.
->  val offsetX = remember { Animatable(0f) }
->  pointerInput(Unit) {
->      // Used to calculate a settling position of a fling animation.
->      val decay = splineBasedDecay<Float>(this)
->      // Wrap in a coroutine scope to use suspend functions for touch events and animation.
->      coroutineScope {
->          while (true) {
->              // Wait for a touch down event.
->              val pointerId = awaitPointerEventScope { awaitFirstDown().id }
->              // Interrupt any ongoing animation.
->              offsetX.stop()
->              // Prepare for drag events and record velocity of a fling.
->              val velocityTracker = VelocityTracker()
->              // Wait for drag events.
->              awaitPointerEventScope {
->                  horizontalDrag(pointerId) { change ->
->                      // Record the position after offset
->                      val horizontalDragOffset = offsetX.value + change.positionChange().x
->                      launch {
->                          // Overwrite the `Animatable` value while the element is dragged.
->                          offsetX.snapTo(horizontalDragOffset)
->                      }
->                      // Record the velocity of the drag.
->                      velocityTracker.addPosition(change.uptimeMillis, change.position)
->                      // Consume the gesture event, not passed to external
->                      change.consumePositionChange()
->                  }
->              }
->              // Dragging finished. Calculate the velocity of the fling.
->              val velocity = velocityTracker.calculateVelocity().x
->              // Calculate where the element eventually settles after the fling animation.
->              val targetOffsetX = decay.calculateTargetValue(offsetX.value, velocity)
->              // The animation should end as soon as it reaches these bounds.
->              offsetX.updateBounds(
->                  lowerBound = -size.width.toFloat(),
->                  upperBound = size.width.toFloat()
->              )
->              launch {
->                  if (targetOffsetX.absoluteValue <= size.width) {
->                      // Not enough velocity; Slide back to the default position.
->                      offsetX.animateTo(targetValue = 0f, initialVelocity = velocity)
->                  } else {
->                      // Enough velocity to slide away the element to the edge.
->                      offsetX.animateDecay(velocity, decay)
->                      // The element was swiped away.
->                      onDismissed()
->                  }
->              }
->          }
->      }
->  }
->      // Apply the horizontal offset to the element.
->      .offset { IntOffset(offsetX.value.roundToInt(), 0) }
+> // This `Animatable` stores the horizontal offset for the element.
+> val offsetX = remember { Animatable(0f) }
+> pointerInput(Unit) {
+>   // Used to calculate a settling position of a fling animation.
+>   val decay = splineBasedDecay<Float>(this)
+>   // Wrap in a coroutine scope to use suspend functions for touch events and animation.
+>   coroutineScope {
+>       while (true) {
+>           // Wait for a touch down event.
+>           val pointerId = awaitPointerEventScope { awaitFirstDown().id }
+>           // Interrupt any ongoing animation.
+>           offsetX.stop()
+>           // Prepare for drag events and record velocity of a fling.
+>           val velocityTracker = VelocityTracker()
+>           // Wait for drag events.
+>           awaitPointerEventScope {
+>               horizontalDrag(pointerId) { change ->
+>                   // Record the position after offset
+>                   val horizontalDragOffset = offsetX.value + change.positionChange().x
+>                   launch {
+>                       // Overwrite the `Animatable` value while the element is dragged.
+>                       offsetX.snapTo(horizontalDragOffset)
+>                   }
+>                   // Record the velocity of the drag.
+>                   velocityTracker.addPosition(change.uptimeMillis, change.position)
+>                   // Consume the gesture event, not passed to external
+>                   change.consumePositionChange()
+>               }
+>           }
+>           // Dragging finished. Calculate the velocity of the fling.
+>           val velocity = velocityTracker.calculateVelocity().x
+>           // Calculate where the element eventually settles after the fling animation.
+>           val targetOffsetX = decay.calculateTargetValue(offsetX.value, velocity)
+>           // The animation should end as soon as it reaches these bounds.
+>           offsetX.updateBounds(
+>               lowerBound = -size.width.toFloat(),
+>               upperBound = size.width.toFloat()
+>           )
+>           launch {
+>               if (targetOffsetX.absoluteValue <= size.width) {
+>                   // Not enough velocity; Slide back to the default position.
+>                   offsetX.animateTo(targetValue = 0f, initialVelocity = velocity)
+>               } else {
+>                   // Enough velocity to slide away the element to the edge.
+>                   offsetX.animateDecay(velocity, decay)
+>                   // The element was swiped away.
+>                   onDismissed()
+>               }
+>           }
+>       }
+>   }
+> }
+>   // Apply the horizontal offset to the element.
+>   .offset { IntOffset(offsetX.value.roundToInt(), 0) }
 > }
 > ```
 >
 > 效果图:滑动删除
 >
-> <img src="https://s2.loli.net/2022/07/27/ADLPQNUysHxIpz1.png" alt="Compose-Animatable-手势动画" style="zoom:25%;" />
+> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ADLPQNUysHxIpz1.png" alt="Compose-Animatable-手势动画" style="zoom:25%;" />
 
 ### 小结
 
