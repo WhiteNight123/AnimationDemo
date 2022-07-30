@@ -24,7 +24,7 @@
 
 **属性动画工作原理[重点]**
 
-![安卓属性动画工作原理](https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/mRjNFA2nMCEJYbz.png)
+![安卓属性动画工作原理](https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/mRjNFA2nMCEJYbz.png)
 
 [安卓属性动画工作原理 -查看大图](https://www.processon.com/view/link/62cbbd0763768906c5087f89)
 
@@ -74,7 +74,7 @@
 
 效果图
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/OWHiDkyCujQlSPA.gif" alt="demo1" style="zoom: 25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/OWHiDkyCujQlSPA.gif" alt="demo1" style="zoom: 25%;" />
 
 #### `ofInt`()
 
@@ -122,16 +122,16 @@ public static ValueAnimator ofInt(@NonNull int... values) {
 
 | AccelerateDecelerateInterpolator                             | AccelerateInterpolator                                       | AnticipateInterpolator                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/2zw9v3yabpIiCG6.gif" alt="AccelerateDecelerateInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Bzu8V7Dsey3oKrZ.gif" alt="AccelerateInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/UHwNOTLXpsChAb8.gif" alt="AnticipateInterpolator" style="zoom:25%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/2zw9v3yabpIiCG6.gif" alt="AccelerateDecelerateInterpolator" style="zoom:25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Bzu8V7Dsey3oKrZ.gif" alt="AccelerateInterpolator" style="zoom:25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/UHwNOTLXpsChAb8.gif" alt="AnticipateInterpolator" style="zoom:25%;" /> |
 
 
 | AnticipateOvershootInterpolator                              | BounceInterpolator                                           | CycleInterpolator                                            |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/yBCnQiZLUIRxmwA.gif" alt="AnticipateOvershootInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/iCHNk6EpMmIARJu.gif" alt="BounceInterpolator" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/bDlG15fxipUZw8d.gif" alt="CycleInterpolator" style="zoom:25%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/yBCnQiZLUIRxmwA.gif" alt="AnticipateOvershootInterpolator" style="zoom:25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/iCHNk6EpMmIARJu.gif" alt="BounceInterpolator" style="zoom:25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/bDlG15fxipUZw8d.gif" alt="CycleInterpolator" style="zoom:25%;" /> |
 
 | DecelerateInterpolator                                       | OvershootInterpolator                                        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MEUAOG9qiWmwY4z.gif" alt="DecelerateInterpolator" style="zoom: 25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Tt9d5vwrnPjYlBu.gif" alt="OvershootInterpolator" style="zoom:25%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MEUAOG9qiWmwY4z.gif" alt="DecelerateInterpolator" style="zoom: 25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Tt9d5vwrnPjYlBu.gif" alt="OvershootInterpolator" style="zoom:25%;" /> |
 
  先来看一下系统自带的插值器是如何实现的,如LinearInterpolator
 
@@ -190,7 +190,7 @@ class MyInterpolator : Interpolator {
 
   效果图:就是反转一下动画
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/FZYJeW2QntgCyED.gif" alt="MyInterpolator" style="zoom: 25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/FZYJeW2QntgCyED.gif" alt="MyInterpolator" style="zoom: 25%;" />
 
 #### 估值器(TypeEvaluator)
 
@@ -233,7 +233,7 @@ class MyEvaluator : TypeEvaluator<Int> {
 
   效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MyEvaluator.gif" alt="MyEvaluator" style="zoom: 25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MyEvaluator.gif" alt="MyEvaluator" style="zoom: 25%;" />
 
 
 
@@ -338,7 +338,7 @@ class FallingBallEvaluator : TypeEvaluator<Point> {
 
   效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ofObject.gif" alt="ofObject" style="zoom: 25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/ofObject.gif" alt="ofObject" style="zoom: 25%;" />
 
 ### ObjectAnimator的简单使用
 
@@ -396,11 +396,11 @@ class FallingBallEvaluator : TypeEvaluator<Point> {
 
 | 旋转                                                         | 平移                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/gF1P5G4cJeTI87p.gif" alt="ObjectAnimator-旋转" style="zoom:33%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/dh1uGvkzgPVJi4p.gif" alt="ObjectAnimator-平移" style="zoom:33%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/gF1P5G4cJeTI87p.gif" alt="ObjectAnimator-旋转" style="zoom:33%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/dh1uGvkzgPVJi4p.gif" alt="ObjectAnimator-平移" style="zoom:33%;" /> |
 
 | 透明                                                         | 缩放                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/cr1awb7nK4MvixX.gif" alt="ObjectAnimator-透明" style="zoom: 33%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/RbSHJwYFsu3Lk46.gif" alt="ObjectAnimator-缩放" style="zoom:33%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/cr1awb7nK4MvixX.gif" alt="ObjectAnimator-透明" style="zoom: 33%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/RbSHJwYFsu3Lk46.gif" alt="ObjectAnimator-缩放" style="zoom:33%;" /> |
 
 常用的属性值
 
@@ -450,7 +450,7 @@ val animator = ObjectAnimator.ofObject(
 
   效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/1OZoxCjlnV8YIUb.gif" alt="自定义ObjectAnimator属性" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/1OZoxCjlnV8YIUb.gif" alt="自定义ObjectAnimator属性" style="zoom:25%;" />
 
 
 
@@ -499,7 +499,7 @@ animator.start()
 
   效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/IEWRNeXbdMpHjYx.gif" alt="ObjectAnimator-改变set&get" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/IEWRNeXbdMpHjYx.gif" alt="ObjectAnimator-改变set&get" style="zoom:25%;" />
 
 
 
@@ -625,7 +625,7 @@ val tvAnimator1 = ObjectAnimator.ofInt(
 
 | PlayTogether                                                 | PlaySequentially                                             |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/iGaWb2kcLHNBS6t.gif" alt="PlayTogether" style="zoom: 33%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/jRHqCGsl7rmWnpN.gif" alt="PlaySwquentially" style="zoom: 33%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/iGaWb2kcLHNBS6t.gif" alt="PlayTogether" style="zoom: 33%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/jRHqCGsl7rmWnpN.gif" alt="PlaySwquentially" style="zoom: 33%;" /> |
 
 
 
@@ -1490,7 +1490,7 @@ public static KeyframeSet ofInt(int... values) {
 
 我们再来看一下ValueAnimator的时序图
 
-![ValueAnimator原理时序图](https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/A6eql3FxIhgyS8H.png)
+![ValueAnimator原理时序图](https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/A6eql3FxIhgyS8H.png)
 
 [ValueAnimation时序图 -查看大图](https://www.processon.com/view/link/62e1d8d6f346fb0760d091d5)
 
@@ -1903,7 +1903,7 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
 | Explode                                                      | Slide                                                        | Fade                                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 从中心移入或移出                                             | 从边缘移入或移出                                             | 调整透明度产生渐变                                           |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Transition-Explode.gif" alt="Transition-Explode" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Transition-Slide.gif" alt="Transition-Slide" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Transition-Fade.gif" alt="Transition-Fade" style="zoom:25%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Transition-Explode.gif" alt="Transition-Explode" style="zoom:25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Transition-Slide.gif" alt="Transition-Slide" style="zoom:25%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Transition-Fade.gif" alt="Transition-Fade" style="zoom:25%;" /> |
 
 
 
@@ -2004,7 +2004,7 @@ val intent = Intent(this, MainActivity2::class.java)
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Activity-%E5%85%B1%E4%BA%AB%E5%85%83%E7%B4%A0.gif" alt="Activity-共享元素" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Activity-%E5%85%B1%E4%BA%AB%E5%85%83%E7%B4%A0.gif" alt="Activity-共享元素" style="zoom:25%;" />
 
   fragment与fragment之间地动画
 
@@ -2026,13 +2026,13 @@ sharedElementEnterTransition = TransitionInflater.from(getContext())
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/wE2KrFdqeT8z4BO.gif" alt="fragment-共享元素" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/wE2KrFdqeT8z4BO.gif" alt="fragment-共享元素" style="zoom:25%;" />
 
   注意:有时从`RecyclerView`界面进入到详情页，由于详情页加载延迟，可能出现没有效果。例如`ImageView`从网络加载图片，可能A界面到B界面没效果，B回到A界面有效果。
 
 例如:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Shared_Transition_no_Postpone.gif" alt="Shared_Transition_no_Postpone" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Shared_Transition_no_Postpone.gif" alt="Shared_Transition_no_Postpone" style="zoom:25%;" />
 
   解决步骤：
 
@@ -2042,7 +2042,7 @@ sharedElementEnterTransition = TransitionInflater.from(getContext())
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Shared_transition_no_exit_retreen.gif" alt="Shared_transition_no_exit_retreen" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Shared_transition_no_exit_retreen.gif" alt="Shared_transition_no_exit_retreen" style="zoom:25%;" />
 
 当Activity A 调用 Activity B ，发生的事件流如下：
 
@@ -2173,7 +2173,7 @@ TransitionManager.go(scene, ChangeBounds())
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/TransitionManager-%E5%8A%A8%E7%94%BB.gif" alt="TransitionManager-动画" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/TransitionManager-%E5%8A%A8%E7%94%BB.gif" alt="TransitionManager-动画" style="zoom:25%;" />
 
 **过渡动画**
 
@@ -2248,7 +2248,7 @@ public class TransitionValues {
 
 先看效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/%E8%87%AA%E5%AE%9A%E4%B9%89Transition.gif" alt="自定义Transition" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/%E8%87%AA%E5%AE%9A%E4%B9%89Transition.gif" alt="自定义Transition" style="zoom: 33%;" />
 
 ```java
 public class MyTransition extends Transition {
@@ -2522,7 +2522,7 @@ android:transitionGroup="true"
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/Shared_transition_final.gif" alt="Shared_transition_final" style="zoom: 33%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/Shared_transition_final.gif" alt="Shared_transition_final" style="zoom: 33%;" />
 
 #### MaterialElevationScale
 
@@ -2561,7 +2561,7 @@ requireActivity().supportFragmentManager.beginTransaction()
     .replace(R.id.constraintLayout4, fragment5).addToBackStack(null).commit()
 ```
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialElevationScale.gif" alt="MaterialElevationScale" style="zoom: 33%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MaterialElevationScale.gif" alt="MaterialElevationScale" style="zoom: 33%;" />
 
 #### MaterialSharedAxis
 
@@ -2596,7 +2596,7 @@ returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false).apply {
 
 | MaterialSharedAxis.X                                         | MaterialSharedAxis.Y                                         | MaterialSharedAxis.Z                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-X.gif" alt="MaterialSharedAxis-X" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-Y.gif" alt="MaterialSharedAxis-Y" style="zoom:25%;" /> | <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-Z.gif" alt="MaterialSharedAxis-Z" style="zoom:25%;" /> |
+| <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-X.gif" alt="MaterialSharedAxis-X" style="zoom: 30%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-Y.gif" alt="MaterialSharedAxis-Y" style="zoom: 30%;" /> | <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MaterialSharedAxis-Z.gif" alt="MaterialSharedAxis-Z" style="zoom: 30%;" /> |
 
 
 
@@ -2621,7 +2621,7 @@ enterTransition = MaterialFadeThrough().apply {
 }
 ```
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/MaterialFadeThrough.gif" alt="MaterialFadeThrough" style="zoom:25%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/MaterialFadeThrough.gif" alt="MaterialFadeThrough" style="zoom:25%;" />
 
 #### View的MaterialContainerTransform
 
@@ -2646,7 +2646,7 @@ val transform = MaterialContainerTransform().apply {
         TransitionManager.beginDelayedTransition(constraintLayout, transform)
 ```
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/View-MaterialContainerTransform.gif" alt="View-MaterialContainerTransform" style="zoom: 33%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/View-MaterialContainerTransform.gif" alt="View-MaterialContainerTransform" style="zoom: 33%;" />
 
 
 
@@ -2683,7 +2683,7 @@ recyclerView.layoutAnimation = // 入场动画
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ehwoWQDFGOZb8kz.gif" alt="RecyclerView-入场动画" style="zoom: 33%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/ehwoWQDFGOZb8kz.gif" alt="RecyclerView-入场动画" style="zoom: 33%;" />
 
 #### ViewPager2的切换动画
 
@@ -2730,7 +2730,7 @@ class SquareBoxTransformer : ViewPager2.PageTransformer {
 }
 ```
 
-<img src="https://s2.loli.net/2022/07/29/BpNo46EwZGQaCqr.webp" alt="img" style="zoom: 67%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/BpNo46EwZGQaCqr.webp" alt="img" style="zoom: 67%;" />
 
 
 |                | 前一个view的position变化 | 当前view的position变化 | 后一个view的position变化 |
@@ -2748,7 +2748,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ViewPager2-%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB.gif" alt="ViewPager2-切换动画" style="zoom:33%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/ViewPager2-%E5%88%87%E6%8D%A2%E5%8A%A8%E7%94%BB.gif" alt="ViewPager2-切换动画" style="zoom:33%;" />
 
 #### 自动为布局更新添加动画
 
@@ -2775,7 +2775,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 
 效果图:
 
-<img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/%E5%B8%83%E5%B1%80%E6%9B%B4%E6%96%B0%E5%8A%A8%E7%94%BB.gif" alt="布局更新动画" style="zoom: 33%;" />
+<img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/%E5%B8%83%E5%B1%80%E6%9B%B4%E6%96%B0%E5%8A%A8%E7%94%BB.gif" alt="布局更新动画" style="zoom: 33%;" />
 
 
 
@@ -2801,7 +2801,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:颜色变化
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/XqHFONVlIwhcURk.gif" alt="Compose-animateColorAsState" width="250dp" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/XqHFONVlIwhcURk.gif" alt="Compose-animateColorAsState" width="250dp" />
 
 ### 为可见性添加动画效果
 
@@ -2831,7 +2831,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:FAB的展开
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/WzescPJXxM7lGrI.gif" alt="Compose-AnimatedVisibility" style="zoom:33%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/WzescPJXxM7lGrI.gif" alt="Compose-AnimatedVisibility" style="zoom:33%;" />
 >
 > 默认情况下，`AnimatedVisibility` 会以淡入和展开的方式显示元素，以淡出和缩小的方式隐藏元素。
 
@@ -2878,7 +2878,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/uoXHKFhv7nsBc9V.gif" alt="Compose-AnimatedVisibility-Custom" style="zoom:33%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/uoXHKFhv7nsBc9V.gif" alt="Compose-AnimatedVisibility-Custom" style="zoom:33%;" />
 
 ### 为内容大小添加动画效果
 
@@ -2909,7 +2909,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/mvVMbNucZqQY1Wd.gif" alt="Compose-animateContentSize" style="zoom:33%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/mvVMbNucZqQY1Wd.gif" alt="Compose-animateContentSize" style="zoom:33%;" />
 
 ### 多值动画
 
@@ -2934,7 +2934,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图: 点击标签页会更改 `tabPage` 状态的值，这时与 `transition` 关联的所有动画值会开始以动画方式切换至为目标状态指定的值。
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/xt2P8iQW5mXjfwv.gif" alt="Compose-Transition-多值动画1" style="zoom:33%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/xt2P8iQW5mXjfwv.gif" alt="Compose-Transition-多值动画1" style="zoom:33%;" />
 >
 > 此外，可以指定 `transitionSpec` 参数来自定义动画行为。例如可以让靠近目标页面的一边比另一边移动得更快来实现指示器的弹性效果。可以在 `transitionSpec`中使用 `isTransitioningTo` infix 函数来确定状态变化的方向。
 >
@@ -2984,7 +2984,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/TGzJo72are9R63b.gif" alt="Compose-Transition-多值动画2" style="zoom:33%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/TGzJo72are9R63b.gif" alt="Compose-Transition-多值动画2" style="zoom:33%;" />
 >
 > Android Studio 支持在 Compose 预览中检查过渡效果。如需使用**动画预览**，请在预览中点击可组合项右上角的“Start interactive mode”图标，以开始交互模式。
 >
@@ -3015,7 +3015,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/aCVpfHsGh9w4QOZ.gif" alt="Compose-InfiniteTransition" style="zoom:33%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/aCVpfHsGh9w4QOZ.gif" alt="Compose-InfiniteTransition" style="zoom:33%;" />
 
 ### 手势动画
 
@@ -3169,7 +3169,7 @@ mViewPager2.setPageTransformer(SquareBoxTransformer())
 >
 > 效果图:滑动删除
 >
-> <img src="https://typora-1307872928.cos.ap-chongqing.myqcloud.com/img/ADLPQNUysHxIpz1.png" alt="Compose-Animatable-手势动画" style="zoom:25%;" />
+> <img src="https://typora-1256766878.cos.ap-chongqing.myqcloud.com/img/ADLPQNUysHxIpz1.png" alt="Compose-Animatable-手势动画" style="zoom:25%;" />
 
 ### 小结
 
