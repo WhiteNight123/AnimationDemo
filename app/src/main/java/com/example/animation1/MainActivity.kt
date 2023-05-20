@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
+import com.example.animation1.customeView.MainActivity7
 
 
 class MainActivity : AppCompatActivity() {
@@ -147,6 +148,7 @@ class MainActivity : AppCompatActivity() {
         }
         button11.setOnClickListener {
             startActivity(Intent(this, MainActivity6::class.java))
+            //startActivity(Intent(this, MainActivity7::class.java))
         }
     }
 

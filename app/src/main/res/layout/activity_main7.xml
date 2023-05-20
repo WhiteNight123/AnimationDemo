@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.example.animation1.customeView.MyTextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:testAttr="520"
+        app:text="helloWorld" />
+
+    <com.example.animation1.customeView.DividingLineTextView
+        android:id="@+id/tv_divide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
+
+    <com.example.animation1.customeView.RectView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.animation1.customeView.MyHorizonView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_200" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/teal_700" />
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/purple_200" />
+
+    </com.example.animation1.customeView.MyHorizonView>
+</LinearLayout>
